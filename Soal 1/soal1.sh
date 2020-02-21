@@ -43,4 +43,6 @@ awk -F '\t' 'NR == 2 { texas=0; wisconsin=0; nebraska=0; illinois=0; minnesota=0
                  if( n_dakota < min1){ min2 = min1; min1 = n_dakota; min2 = min1; arr[i]="North Dakota"; arr[i-1]="Kansas"};
                  print "1.b."; print arr[i];print arr[i-1]; printf("\n")}' Sample-Superstore.tsv
 
-
+awk -F '\t' '$11 ~ /Texas/ { print $21,$17}
+	     END {
+	     }' Sample-Superstore.tsv | sort -gk1 | head -10
