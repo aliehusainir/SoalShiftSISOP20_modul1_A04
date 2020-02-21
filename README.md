@@ -30,7 +30,19 @@ Opsi `-O` digunakan untuk menentukan nama file yang diunduh, sedangkan `-a` digu
 Berikut hasil folder `Downloads` setelah `downloader.sh` dijalankan:<br/>
 ![Screenshot from 2020-02-21 16-41-49](https://user-images.githubusercontent.com/57984390/75024963-ea593d80-54cc-11ea-9f89-5c4e6703c5f6.png)
 ## 3b. Mengatur crontab untuk mengunduh sesuai jadwal tertentu
-![Screenshot from 2020-02-21 16-43-39](https://user-images.githubusercontent.com/57984390/75024972-ed542e00-54cc-11ea-856b-97f08847ce43.png)
+![Screenshot from 2020-02-21 16-43-39](https://user-images.githubusercontent.com/57984390/75024972-ed542e00-54cc-11ea-856b-97f08847ce43.png)<br/>
 Untuk menjalankan `downloader.sh` setiap 8 jam mulai jam 6.05, `*` pertama yang melambangkan menit di-set menjadi `5`.<br/>
 Kemudian `*` kedua yang melambangkan jam di-set menjadi `6-22/8`.<br/>
 `*` kelima yang melambangkan hari dalam seminggu diganti menjadi `1-5,7` (Senin-Jumat dan Minggu).<br/>
+## 3c. Memindah file duplikat dan file non-duplikat ke folder masing-masing
+![Screenshot from 2020-02-21 16-42-10](https://user-images.githubusercontent.com/57984390/75024968-eb8a6a80-54cc-11ea-821e-838abd53ca4d.png)<br/>
+Untuk mengetahui file mana yang duplikat, dijalankan command `grep Location Downloads/wget.log > location.log` yang menyimpan detail lokasi pengunduhan file. Apabila ada yang angkanya sama, maka jelas itu duplikat.<br/>
+![Screenshot from 2020-02-21 16-32-56](https://user-images.githubusercontent.com/57984390/75024958-e88f7a00-54cc-11ea-943d-ae72e81604e0.png)<br/>
+`dupes.awk` adalah perintah awk yang digunakan untuk mengidentifikasi duplikat, dan menghasilkan baris-baris yang berisi duplikat tersebut.<br/>
+![Screenshot from 2020-02-21 16-33-37](https://user-images.githubusercontent.com/57984390/75024962-e9c0a700-54cc-11ea-94dc-669d51edfa15.png)<br/>
+`dupes.awk` sendiri dijalankan melalui script `relocate.sh` yang menyimpan hasil `dupes.awk` ke dalam array.<br/>
+Kemudian setiap file yang memiliki nama `pdkt_kusuma_n` dimana n berupa angka isi dari array hasil awk tadi akan dipindahkan ke folder `duplicate`.<br/>
+Setelah semua duplikat dipindahkan, baru sisanya dipindahkan ke folder `kenangan`.<br/>
+Hasil akhirnya seperti berikut:<br/>
+![Screenshot from 2020-02-21 16-42-28](https://user-images.githubusercontent.com/57984390/75024970-ecbb9780-54cc-11ea-85fb-f62b49b554fb.png)
+![Screenshot from 2020-02-21 17-53-23](https://user-images.githubusercontent.com/57984390/75029069-fbf21380-54d3-11ea-88d2-ad438dea9a8d.png)
