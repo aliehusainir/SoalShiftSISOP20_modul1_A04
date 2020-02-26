@@ -3,7 +3,17 @@ Praktikum Modul 1 Sisop 2020<br/>
 05111840000051 Juwita Kartika Rani<br/>
 05111840000097 Alie Husaini R.<br/>
 # Soal 1
-Untuk soal 1, readme ada di dalam folder soal 1.
+## 1a. Untuk menampilkan region yang memiliki profit yang paling sedikit
+![1a](https://user-images.githubusercontent.com/56763570/75320145-f291df80-5822-11ea-95a4-4aa34a354985.PNG)
+-F untuk memisahkan data menjadi kolom-kolom berdasarkan /t (tab). NR == 2 digunakan untuk memulai dari baris ke-2. Membuat variabel dari masing-masing region dan dijumlahkan semua profitnya menurut region masing-masing. Kemudian membuat suatu variabel min yang akan diisikan jumlah profit yang paling sedikit. Kemudian dibandingkan antara region dengan variabel min dan jika region lebih kecil dari mmin maka variabel min diupdate begitu juga dengan varaibel word yang berisi nama region, dan seterusnya sampai ketemu region dengan profit yang paling sedikit.
+## 1b. Untuk menampilkan 2 state yang memiliki profit terendah berdasarkan hasil 1a.
+![1b](https://user-images.githubusercontent.com/56763570/75320655-038f2080-5824-11ea-8632-77705e8dd368.PNG)
+sama dengan cara 1a.
+## 1c. Menampilkan 10 nama produk yang memiliki profit paling sedikit berdasarkan hasil 1b.
+![1c](https://user-images.githubusercontent.com/56763570/75320816-5e287c80-5824-11ea-89e6-e52ca165d985.PNG)
+-F untuk memisahkan data menjadi kolom-kolom berdasarkan /t (tab). NR == 2 digunakan untuk memulai dari baris ke-2. Kemudian dicari nama produk yang state-nya bernama Texas dan dimasukkan ke dalam array yang indexnya adalah nama produk dan isi dari arraynya adalah profit dari produk tersebut. Kemudian di print terlebih dahulu array[i], i. Setelah itu di sort argumen pertama dengan gk-1. Kemudian di print pada baris sebelum sama dengan 10 dan di print.
+Hasil akhir sebagai berikut.
+![WhatsApp Image 2020-02-25 at 22 34 23](https://user-images.githubusercontent.com/56763570/75319284-34218b00-5821-11ea-88df-db19af31c1a9.jpeg)
 # Soal 2
 ## 2a. dan 2b. Membuat password acak sepanjang 28 karakter alfanumerik, hasilnya disimpan ke file .txt
 ![Screenshot from 2020-02-21 16-33-14](https://user-images.githubusercontent.com/57984390/75024961-e9281080-54cc-11ea-88a8-5811ffb301be.png)<br/>
